@@ -2,7 +2,7 @@ FROM pytorch/torchserve
 
 COPY model_store/dense121_aug.mar /home/model-server/model-store/
 
-RUN touch /home/model-server/config.properties && \ echo "enable_envvars_config=true" >> /home/model-server/config.properties
+COPY config.properties /home/model-server/
 
 ENV TS_DISABLE_TOKEN_AUTHORIZATION=true
 
